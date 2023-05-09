@@ -1,0 +1,30 @@
+<h2>Service List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th> Service Id </th>
+            <th> Service Name</th>
+            <th> Estimated Duration </th>
+            <th> Team Members Involved</th>
+            <th> Service Type </th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let service of services">
+            <td>{{service.serviceId}}</td>
+            <td>{{service.serviceName}}</td>
+            <td>{{service.estimatedDuration}}</td>
+            <td>{{service.teamMembersInvolved}}</td>
+            <td>{{service.serviceType}}</td>
+            <td>
+                <button (click)="updateService(service.serviceId)" class="btn btn-info" >Update</button>
+                <button (click)="deleteeService(service.serviceId)" class="btn btn-danger" style="margin-left: 10px" >Delete</button>
+                
+
+            </td>
+            
+            
+        </tr>
+    </tbody>
+</table>

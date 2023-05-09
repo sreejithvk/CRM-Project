@@ -1,0 +1,45 @@
+
+<div class="col-md-6 offset-md-3" >
+
+    <h3>Update Services</h3>
+    <form (ngSubmit)="onSubmit()" #serviceForm="ngForm">
+        
+        <div class="form-group">
+            <label for="serviceId">Service ID <span style="color: red;">*</span></label>
+            <input type="text" class="form-control" id="serviceId" [(ngModel)]="service.serviceId" name="serviceId" required="true">
+            
+        </div> 
+    
+        <div class="form-group">
+            <label for="serviceName">Service Name <span style="color: red;">*</span></label>
+            <input type="text" class="form-control" id="serviceName" [(ngModel)]="service.serviceName" name="serviceName" required="true">
+            
+        </div>
+    
+        <div class="form-group">
+            <label for="estimatedDuration">Estimated Duration <span style="color: red;">*</span></label>
+            <input type="number" class="form-control" id="estimatedDuration" [(ngModel)]="service.estimatedDuration" name="estimatedDuration" required>
+            
+        </div>
+    
+        <div class="form-group">
+            <label for="teamMembers">Team Members Involved <span style="color: red;">*</span></label>
+            <input type="number" class="form-control" id="teamMembers" [(ngModel)]="service.teamMembersInvolved" name="teamMembersInvolved" required>
+            
+        </div>
+    
+        <div class="form-group">
+            <label for="serviceType">Service Type <span style="color: red;">*</span></label>
+            <select class="form-control" id="serviceType" name="serviceType" [(ngModel)]="service.serviceType" required>
+              <option value="">Select Service Type</option>
+              <option value="new">New</option>
+              <option value="existing">Existing</option>
+            </select>
+            
+    </div> <br>
+    
+        <button type="submit" class="btn btn-success" [disabled]="!serviceForm.form.valid">Update Service</button>
+    
+    
+    </form>
+    </div>
